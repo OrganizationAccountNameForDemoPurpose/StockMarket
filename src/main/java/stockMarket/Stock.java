@@ -47,8 +47,9 @@ public class Stock {
 		// Get Row Count
 		int rowCount = sh1.getLastRowNum();
 		System.out.println(rowCount);
-
+		FileOutputStream fout;
 		for (int i = 1; i <= rowCount; i++) {
+			fout = new FileOutputStream(src);
 			driver.findElement(By.xpath("//*[@id='stock_symbol_chosen']/a/span")).click();
 			Thread.sleep(1000);
 			String searchValue = sh1.getRow(i).getCell(1).getStringCellValue();
@@ -64,11 +65,9 @@ public class Stock {
 			String[] spotPrice = d.split(" ");
 			System.out.println(spotPrice[2]);
 			sh1.getRow(i).createCell(2).setCellValue(spotPrice[2]);
-
+			wb.write(fout);
+			fout.close();
 		}
-		FileOutputStream fout = new FileOutputStream(src);
-		wb.write(fout);
-		fout.close();
-
+		System.out.println("Done");
 	}
 }
