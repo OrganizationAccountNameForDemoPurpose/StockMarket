@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -18,8 +19,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Stock {
 
-	public static void main(String[] args) throws InterruptedException, IOException {
-
+	public static void loadAndCopyDataFromWebsite(String excelFilePath, int startingRow)
+			throws InterruptedException, IOException {
 		WebDriver driver;
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
@@ -32,10 +33,7 @@ public class Stock {
 		js.executeScript("window.scrollBy(0,700)", "");
 		Thread.sleep(5000);
 
-		String basePath = new File("").getAbsolutePath();
-		System.out.println(basePath);
 		// Declaring Excel File Path
-		String excelFilePath = basePath + "\\StockData.xlsx";
 		System.out.println(excelFilePath);
 		File src = new File(excelFilePath);
 		// load file
@@ -48,10 +46,11 @@ public class Stock {
 		int rowCount = sh1.getLastRowNum();
 		System.out.println(rowCount);
 		FileOutputStream fout;
-		for (int i = 1; i <= rowCount; i++) {
-			fout = new FileOutputStream(src);
+		for (int i = startingRow; i <= rowCount; i++) {
+			Thread.sleep(5000);
 			driver.findElement(By.xpath("//*[@id='stock_symbol_chosen']/a/span")).click();
-			Thread.sleep(1000);
+			System.out.println("CLicked");
+			Thread.sleep(5000);
 			String searchValue = sh1.getRow(i).getCell(1).getStringCellValue();
 			driver.findElement(By.xpath("//*[@id='stock_symbol_chosen']/div/div/input")).sendKeys(searchValue);
 			driver.findElement(By.xpath("//*[@id='stock_symbol_chosen']/div/div/input")).sendKeys(Keys.ENTER);
@@ -65,9 +64,23 @@ public class Stock {
 			String[] spotPrice = d.split(" ");
 			System.out.println(spotPrice[2]);
 			sh1.getRow(i).createCell(2).setCellValue(spotPrice[2]);
+			fout = new FileOutputStream(src);
 			wb.write(fout);
 			fout.close();
 		}
 		System.out.println("Done");
+
+	}
+
+	public static void main(String[] args) throws InterruptedException, IOException {
+
+		Scanner scanner = new Scanner(System.in);
+		String basePath = new File("").getAbsolutePath();
+		System.out.println(basePath);
+		String excelFilePath = basePath + "\\StockData.xlsx";
+		System.out.println("Enter starting row number(1-100)");
+		int row = Integer.parseInt(scanner.nextLine());
+		loadAndCopyDataFromWebsite(excelFilePath, row);
+		scanner.close();
 	}
 }
