@@ -8,9 +8,9 @@ updates:
   - package-ecosystem: "maven" # See documentation for possible values
     directory: "/" # Location of package manifests
     open-pull-requests-limit: 0
-    schedule:
-      interval: "daily"
-      time: "13:37"
+   # schedule:
+   #   interval: "daily"
+   #   time: "13:37"
       # Use India Standard Time (UTC +05:30)
-      timezone: "Asia/Calcutta"
+   #   timezone: "Asia/Calcutta"
       
