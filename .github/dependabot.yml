@@ -9,6 +9,6 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
-      time: "13:25"
+      time: "13:30"
       # Use India Standard Time (UTC +05:30)
       timezone: "Asia/Calcutta"
