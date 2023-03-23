@@ -13,4 +13,12 @@ updates:
       time: "15:10"
       timezone: "Asia/Calcutta"
       
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "15:10"
+      timezone: "Asia/Calcutta"
+      
+      
       
