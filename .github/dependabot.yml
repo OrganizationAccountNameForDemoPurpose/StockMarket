@@ -10,7 +10,7 @@ updates:
     open-pull-requests-limit: 0
     schedule:
       interval: "daily"
-      time: "13:30"
+      time: "13:37"
       # Use India Standard Time (UTC +05:30)
       timezone: "Asia/Calcutta"
       
