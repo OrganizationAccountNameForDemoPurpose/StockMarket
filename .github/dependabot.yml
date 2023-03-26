@@ -16,7 +16,7 @@ updates:
       
   - package-ecosystem: "maven" # See documentation for possible values
     directory: "/" # Location of package manifests
-    open-pull-requests-limit: 0
+    open-pull-requests-limit: 5
     schedule:
       interval: "daily"
       time: "17:40"
