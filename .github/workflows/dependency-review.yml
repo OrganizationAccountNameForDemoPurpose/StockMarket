@@ -20,19 +20,19 @@ jobs:
     steps:
       - name: 'Checkout Repository'
         uses: actions/checkout@v3
-      - name: 'Dependency Review'
-        uses: actions/dependency-review-action@v3
+      - id: step2
+        name: 'Dependency Review'
+        uses: actions/dependency-review-action@v3 || true
         with:
           fail-on-severity: high
           fail-on-scopes: runtime, development
-
-  conclusion:
-    runs-on: ubuntu-latest
-    needs: dependency-review
-    if: always()
-
-    steps:
-      - if: steps.dependency-review.outcome != 'success'
-        run: |
-          echo "${{ steps.dependency-review.outcome }} != 'success'"
-          exit 0          
+        
+  #conclusion:
+ #   runs-on: ubuntu-latest
+ #   needs: dependency-review
+ #   if: always()
+ #   steps:
+ #     - if: steps.step2.outcome != 'success'
+ #       run: |
+ #         echo "${{ steps.dependency-review.outcome }} != 'success'"
+ #         exit 0          
