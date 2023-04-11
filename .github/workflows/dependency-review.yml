@@ -21,8 +21,18 @@ jobs:
       - name: 'Checkout Repository'
         uses: actions/checkout@v3
       - name: 'Dependency Review'
-        continue-on-error: true
         uses: actions/dependency-review-action@v3
         with:
           fail-on-severity: high
           fail-on-scopes: runtime, development
+
+  conclusion:
+    runs-on: ubuntu-latest
+    needs: dependency-review
+    if: always()
+
+    steps:
+      - if: steps.dependency-review.outcome != 'success'
+        run: |
+          echo "${{ steps.dependency-review.outcome }} != 'success'"
+          exit 0          
