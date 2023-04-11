@@ -17,10 +17,6 @@ permissions:
 jobs:
   dependency-review:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        experimental:
-          - true
     steps:
       - name: 'Checkout Repository'
         uses: actions/checkout@v3
