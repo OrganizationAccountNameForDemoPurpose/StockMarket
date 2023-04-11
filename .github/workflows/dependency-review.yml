@@ -20,17 +20,17 @@ jobs:
     steps:
       - name: 'Checkout Repository'
         uses: actions/checkout@v3
+      - id: step2
+        name: 'Dependency Review'
+        continue-on-error: true
+        uses: actions/dependency-review-action@v3
+        with:
+          fail-on-severity: high
+          fail-on-scopes: runtime, development
       - id: step3
         name: 'Pass Kar do'
         run: |
-          echo Hello
-  #    - id: step2
-  #      name: 'Dependency Review'
-  #      continue-on-error: true
-  #      uses: actions/dependency-review-action@v3
-  #      with:
-  #        fail-on-severity: high
-  #        fail-on-scopes: runtime, development
+          echo Hello     
   #conclusion:
  #   runs-on: ubuntu-latest
  #   needs: dependency-review
