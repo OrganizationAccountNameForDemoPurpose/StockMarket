@@ -21,8 +21,8 @@ jobs:
       - name: 'Checkout Repository'
         uses: actions/checkout@v3
       - name: 'Dependency Review'
-        uses: actions/dependency-review-action@v3
         continue-on-error: true
+        uses: actions/dependency-review-action@v3
         with:
           fail-on-severity: high
           fail-on-scopes: runtime, development
