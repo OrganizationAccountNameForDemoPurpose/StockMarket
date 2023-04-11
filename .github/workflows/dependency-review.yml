@@ -17,11 +17,13 @@ permissions:
 jobs:
   dependency-review:
     runs-on: ubuntu-latest
-    continue-on-error: true
+    strategy:
+      matrix:
+        experimental:
+          - true
     steps:
       - name: 'Checkout Repository'
         uses: actions/checkout@v3
-        continue-on-error: false
       - name: 'Dependency Review'
         uses: actions/dependency-review-action@v3
         with:
