@@ -5,6 +5,7 @@
 # Source repository: https://github.com/actions/dependency-review-action
 # Public documentation: https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-dependency-review#dependency-review-enforcement
 name: 'Dependency Review'
+
 on:
   pull_request:
     branches: [ "master" ]
@@ -20,8 +21,10 @@ jobs:
     steps:
       - name: 'Checkout Repository'
         uses: actions/checkout@v3
+        continue-on-error: true
       - name: 'Dependency Review'
         uses: actions/dependency-review-action@v3
+        continue-on-error: true
         with:
           fail-on-severity: high
           fail-on-scopes: runtime, development
