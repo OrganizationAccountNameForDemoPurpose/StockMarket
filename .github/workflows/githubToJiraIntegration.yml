@@ -1,4 +1,4 @@
-name: GitHub Security Alerts for Jira
+name: Raising JIRA issues for Dependabot alerts
 
 on:
   schedule:
