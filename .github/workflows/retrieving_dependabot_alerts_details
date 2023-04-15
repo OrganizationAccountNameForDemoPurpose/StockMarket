@@ -1,0 +1,26 @@
+name: Get Dependabot Alerts
+
+on:
+  workflow_dispatch:
+
+jobs:
+  get-alerts:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Get Dependabot alerts
+      id: alerts
+      uses: actions/github-script@v3.3.2
+      with:
+        script: |
+          const response = await github.request('GET /repos/{owner}/{repo}/alerts', {
+            owner: context.repo.owner,
+            repo: context.repo.repo
+          })
+          return JSON.stringify(response.data)
+          
+    - name: Display alerts
+      run: |
+        echo "${{ steps.alerts.outputs.result }}"
