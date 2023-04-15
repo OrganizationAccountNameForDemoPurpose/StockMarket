@@ -7,10 +7,10 @@ on:
     branches:
       - master
   workflow_dispatch:
-    inputs:
-      message:
-        description: 'Aakash is triggering workflow manually'
-        required: true    
+ #   inputs:
+ #     message:
+ #       description: 'Aakash is triggering workflow manually'
+ #       required: true    
 
 env:
   JIRA_BASE_URL: https://cruzeaakash.atlassian.net/
@@ -23,7 +23,7 @@ jobs:
   create_jira:
     name: Dependabot Jira
     runs-on: ubuntu-latest
-    if: github.event.pull_request.actor == 'dependabot[bot]' #id dependabot user
+    if: github.event.pull_request.user.id == 27856297 #id dependabot user
     steps:
     - name: Login to Jira
       uses: atlassian/gajira-login@v2.0.0
