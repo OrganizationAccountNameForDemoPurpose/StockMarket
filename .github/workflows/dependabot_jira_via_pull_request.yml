@@ -6,6 +6,11 @@ on:
       - opened
     branches:
       - master
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'Aakash is triggering workflow manually'
+        required: true    
 
 env:
   JIRA_BASE_URL: https://cruzeaakash.atlassian.net/
