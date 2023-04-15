@@ -1,0 +1,43 @@
+name: Create Jira Issues for Dependabot Pull Requests
+on:
+  schedule:
+    - cron: '0 0 * * *' # run every day at midnight
+  workflow_dispatch:
+  
+jobs:
+  create_issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Get Dependabot Pull Requests
+        id: get_prs
+        uses: octokit/request-action@v2.x
+        with:
+          route: GET /repos/CRUZEAAKASH/StockMarket/pulls
+          owner: ${{ github.repository_owner }}
+          repo: ${{ github.repository }}
+          state: open
+          head: dependabot
+          
+      - name: Create Jira Issues
+        uses: atlassian/gajira-create-issue@master
+        with:
+          jira-base-url: https://cruzeaakash.atlassian.net/
+          jira-api-token: ${{ secrets.JiraApiToken }}
+          jira-email: aakash.shinghal1993@gmail.com
+          jira-project: STOC
+          summary: "Dependabot PR: ${{ each.value.title }}"
+          description: |
+            ${{ each.value.body }}
+            PR URL: ${{ each.value.html_url }}
+          issue-type: Bug
+          labels: Dependabot
+        env:
+          PRS: ${{ toJson(steps.get_prs.outputs.data) }}
+        run: |
+          for pr in $(echo $PRS | jq -r '.[].number'); do
+            echo "Creating Jira issue for PR $pr"
+            jira-cli createIssue --project ${JIRA_PROJECT} --type Bug --summary "Dependabot PR: $(echo $PRS | jq -r ".[] | select(.number == $pr) | .title")" --description "$(echo $PRS | jq -r ".[] | select(.number == $pr) | .body") PR URL: $(echo $PRS | jq -r ".[] | select(.number == $pr) | .html_url")" --labels Dependabot
+          done
