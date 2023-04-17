@@ -26,7 +26,7 @@ jobs:
     if: ${{ github.actor == 'dependabot[bot]' }}
     steps:
     - name: Login to Jira
-      uses: atlassian/gajira-login@v3
+      uses: atlassian/gajira-login@master
       env:
         JIRA_BASE_URL: https://cruzeaakash.atlassian.net/
         JIRA_USER_EMAIL: aakash.shinghal1993@gmail.com
