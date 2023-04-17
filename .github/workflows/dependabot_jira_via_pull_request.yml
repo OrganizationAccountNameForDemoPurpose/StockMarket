@@ -23,7 +23,7 @@ jobs:
   create_jira:
     name: Dependabot Jira
     runs-on: ubuntu-latest
-    if: github.event.pull_request.head_repo.owner.login == dependabot[bot] #id dependabot user
+    if: ${{ github.actor == 'dependabot[bot]' }}
     steps:
     - name: Login to Jira
       uses: atlassian/gajira-login@v2.0.0
