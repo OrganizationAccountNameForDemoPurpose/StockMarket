@@ -15,7 +15,7 @@ on:
 env:
   JIRA_BASE_URL: https://cruzeaakash.atlassian.net/
   JIRA_USER_EMAIL: aakash.shinghal1993@gmail.com
-  JIRA_API_TOKEN: ${{ secrets.JIRAAPITOKEN }}
+  JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
   JIRA_PROJECT: STOC
   JIRA_ISSUE_TYPE: Bug
 
