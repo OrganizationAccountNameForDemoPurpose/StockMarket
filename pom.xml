@@ -80,6 +80,20 @@
     <version>3.0.5</version>
 </dependency>
 
+<!-- https://mvnrepository.com/artifact/org.xwiki.platform/xwiki-platform-wiki-ui-mainwiki -->
+<dependency>
+    <groupId>org.xwiki.platform</groupId>
+    <artifactId>xwiki-platform-wiki-ui-mainwiki</artifactId>
+    <version>14.9</version>
+</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.xwiki.platform/xwiki-platform-rendering-macro-rss -->
+<dependency>
+    <groupId>org.xwiki.platform</groupId>
+    <artifactId>xwiki-platform-rendering-macro-rss</artifactId>
+    <version>14.5</version>
+    <scope>runtime</scope>
+</dependency>
 
 
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
