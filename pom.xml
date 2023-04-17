@@ -125,13 +125,13 @@
     <scope>runtime</scope>
 </dependency>
 		
-		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
+<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
 <dependency>
-    <groupId>org.junit.jupiter</groupId>
-    <artifactId>junit-jupiter-engine</artifactId>
-    <version>5.0.3</version>
-    <scope>test</scope>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    <version>1.7.29</version>
 </dependency>
+
 
 
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
