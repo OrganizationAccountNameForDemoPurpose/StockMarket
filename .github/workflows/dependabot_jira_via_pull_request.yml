@@ -30,7 +30,7 @@ jobs:
       env:
         JIRA_BASE_URL: ${{ env.JIRA_BASE_URL }}
         JIRA_USER_EMAIL: ${{ env.JIRA_USER_EMAIL }}
-        JIRA_API_TOKEN: ${{ secrets.JIRAApiToken }}
+        JIRA_API_TOKEN: ${{ secrets.JiraApiToken }}
 
     - name: Create Jira Issue
       id: create
