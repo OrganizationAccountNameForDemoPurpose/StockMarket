@@ -109,6 +109,13 @@
     <version>2.3.34</version>
 </dependency>
 
+<!-- https://mvnrepository.com/artifact/androidx.appcompat/appcompat -->
+<dependency>
+    <groupId>androidx.appcompat</groupId>
+    <artifactId>appcompat</artifactId>
+    <version>1.5.1</version>
+    <scope>runtime</scope>
+</dependency>
 
 
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
