@@ -13,9 +13,9 @@ on:
  #       required: true    
 
 env:
-  JIRA_BASE_URL: https://cruzeaakash.atlassian.net/
-  JIRA_USER_EMAIL: aakash.shinghal1993@gmail.com
-  JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+#  JIRA_BASE_URL: https://cruzeaakash.atlassian.net/
+#  JIRA_USER_EMAIL: aakash.shinghal1993@gmail.com
+ # JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
   JIRA_PROJECT: STOC
   JIRA_ISSUE_TYPE: Bug
 
@@ -28,9 +28,9 @@ jobs:
     - name: Login to Jira
       uses: atlassian/gajira-login@v3
       env:
-        JIRA_BASE_URL: ${{ env.JIRA_BASE_URL }}
-        JIRA_USER_EMAIL: ${{ env.JIRA_USER_EMAIL }}
-        JIRA_API_TOKEN: ${{ env.JIRA_API_TOKEN }}
+        JIRA_BASE_URL: https://cruzeaakash.atlassian.net/
+        JIRA_USER_EMAIL: aakash.shinghal1993@gmail.com
+        JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
 
     - name: Create Jira Issue
       id: create
