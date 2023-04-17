@@ -91,7 +91,7 @@
 <dependency>
     <groupId>com.atlassian.connect</groupId>
     <artifactId>atlassian-connect-spring-boot-core</artifactId>
-    <version>2.1.4</version>
+    <version>3.0.2</version>
     <scope>runtime</scope>
 </dependency>
 
