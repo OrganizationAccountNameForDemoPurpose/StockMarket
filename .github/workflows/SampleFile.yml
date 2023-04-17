@@ -1,0 +1,21 @@
+name: Checking JIRA Login
+
+on:
+  pull_request:
+    types:
+      - opened
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Jira Example
+    steps:
+    - name: Login
+      uses: atlassian/gajira-login@master
+      env:
+        JIRA_BASE_URL: https://cruzeaakash.atlassian.net/
+        JIRA_USER_EMAIL: aakash.shinghal1993@gmail.com
+        JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
