@@ -2,7 +2,7 @@ name: Raising JIRA issues for Dependabot alerts
 
 on:
   schedule:
-    - cron: '0 8 * * *'
+    - cron: '* * * * *'
   workflow_dispatch:    
 
 jobs:
@@ -16,5 +16,5 @@ jobs:
           JIRA_TOKEN: ${{ secrets.JiraApiToken }}
           JIRA_HOST: https://cruzeaakash.atlassian.net
           JIRA_USER: aakash.shinghal1993@gmail.com
-          JIRA_PROJECT: STOC
+          JIRA_PROJECT: SM
           JIRA_ISSUE_TYPE: Bug
