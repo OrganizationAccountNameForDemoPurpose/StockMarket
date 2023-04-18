@@ -19,3 +19,4 @@ jobs:
           JIRA_PROJECT: STOC
           JIRA_ISSUE_TYPE: Bug
           JIRA_WATCHERS: aakash.shinghal1993@gmail.com
+          JIRA_RESTRICTED_COMMENT_ROLE: "*"
