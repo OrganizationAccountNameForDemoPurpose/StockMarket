@@ -3,6 +3,7 @@ name: Raising JIRA issues for Dependabot alerts
 on:
   schedule:
     - cron: '0 8 * * *'
+  workflow_dispatch:    
 
 jobs:
   syncSecurityAlerts:
@@ -17,3 +18,4 @@ jobs:
           JIRA_USER: aakash.shinghal1993@gmail.com
           JIRA_PROJECT: STOC
           JIRA_ISSUE_TYPE: Bug
+          JIRA_WATCHERS: aakash.shinghal1993@gmail.com
