@@ -2,8 +2,7 @@ name: Raising JIRA issues for Dependabot alerts
 
 on:
   schedule:
-    - cron: '* * * * *'
-  workflow_dispatch:    
+    - cron: '* * * * *'    
 
 jobs:
   syncSecurityAlerts:
