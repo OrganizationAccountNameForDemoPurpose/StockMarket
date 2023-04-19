@@ -15,6 +15,6 @@ jobs:
           GH_SECURITY_TOKEN: ${{ secrets.GitHubSecurityToken }}
           JIRA_TOKEN: ${{ secrets.JiraApiToken }}
           JIRA_HOST: https://cruzeaakash.atlassian.net
-          JIRA_USER: aakash.shinghal1993@gmail.com
+          JIRA_USER: ${{ secrets.UserId }}
           JIRA_PROJECT: SM
           JIRA_ISSUE_TYPE: Bug
