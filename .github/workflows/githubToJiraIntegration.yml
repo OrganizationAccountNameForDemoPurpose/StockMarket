@@ -7,7 +7,7 @@ on:
 
 jobs:
   syncSecurityAlerts:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: "Sync security alerts to Jira issues"
         uses: reload/github-security-jira@v1.3.1
