@@ -14,7 +14,7 @@ jobs:
         env:
           GH_SECURITY_TOKEN: ${{ secrets.GitHubSecurityToken }}
           JIRA_TOKEN: ${{ secrets.JiraApiToken }}
-          JIRA_HOST: https://cruzeaakash.atlassian.net
+          JIRA_HOST: https://83bb-182-72-16-113.ngrok-free.app
           JIRA_USER: ${{ secrets.UserId }}
           JIRA_PROJECT: SM
           JIRA_ISSUE_TYPE: Bug
