@@ -84,7 +84,7 @@
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-core</artifactId>
-    <version>6.0.8</version>
+    <version>5.2.24.RELEASE</version>
 </dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.atlassian.connect/atlassian-connect-spring-boot-core -->
@@ -167,7 +167,7 @@
 		<dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-core</artifactId>
-    <version>4.1.4.RELEASE</version>
+    <version>5.2.24.RELEASE</version>
 </dependency>
 
 		<dependency>
