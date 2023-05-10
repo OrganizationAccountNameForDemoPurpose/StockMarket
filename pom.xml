@@ -279,6 +279,11 @@
   <version>2.11.0</version>
 </dependency>
 
+<dependency>
+  <groupId>org.eclipse.jetty</groupId>
+  <artifactId>jetty-server</artifactId>
+  <version>9.2.1.v20140609</version>
+</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
 
