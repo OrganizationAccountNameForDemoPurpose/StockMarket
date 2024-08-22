@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Jira Create issue
-        uses: atlassian/gajira-create@v2.0.0
+        uses: atlassian/gajira-create@v3.0.1
   #    - id: step2
   #      name: 'Dependency Review'
   #      continue-on-error: true
